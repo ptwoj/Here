@@ -1,8 +1,8 @@
 package com.example.demo1.hobby.domain.entity;
 
+import com.example.demo1.member.domain.entity.Member;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.TypeAlias;
 //Entity은 테이블를 위한 설계?
 @Entity
 /*
@@ -19,10 +19,12 @@ SQL 쿼리를 직접 작성하지 않고도 객체를 데이터베이스에 저�
 //@Builder: 이 주석은 빌더 패턴을 사용하여 객체를 생성할 수 있도록 해줌. 빌더 패턴은 인스턴스 생성 시 가독성과 유연성을 높여주는 역할
 @Table(name = "hobbies")
 //@Table(name = "hobbies"): 이 주석은 해당 클래스와 매핑되는 데이터베이스 테이블의 이름을 지정 "hobbies"라는 이름의 테이블과 연결된다.
-
+//UUID는 오토로 쫘라랅 해주잖아? 그거를 차량번호처럼 고유 번호가 있게 만드는거
 public class Hobby {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @ManyToOne
+    private Member member;
 }
-//UUID는 오토로 쫘라랅 해주잖아? 그거를 차량번호처럼 고유 번호가 있게 만드는거
+
