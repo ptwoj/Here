@@ -1,0 +1,17 @@
+
+# spring.datasource.url=jdbc:mysql://localhost:3306/todos?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+# spring.datasource.username=root
+# spring.datasource.password=1q2w3e4r!!
+# yaml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/new_schema?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
